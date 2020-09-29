@@ -159,7 +159,7 @@ class Admin
 
     public function responseError($message = '', $code = 400)
     {
-        $code = $code == 400 ? config('admin.reponse_code.failed',$code) : $code;
+        $code = $code == 400 ? config('admin.response_code.failed',$code) : $code;
         return $this->response([], $message, $code);
     }
 
