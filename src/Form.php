@@ -522,7 +522,7 @@ class Form extends Component
         if (($response = $this->prepare($data)) instanceof Response) {
             return $response;
         }
-        DB::transaction(function () use ($data) {
+        DB::connection(config('admin.database.connection'))->transaction(function () use ($data) {
             $inserts = $this->prepareInsert($this->updates);
             foreach ($inserts as $key => $value) {
                 $this->model->setAttribute($key, $value);
