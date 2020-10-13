@@ -88,8 +88,8 @@ class Permission
             return Admin::responseError(trans('admin.deny'),config('admin.response_code.failed'));
 
         }
-        abort(403, trans('admin.deny'));
-        // return Admin::responseError(trans('admin.deny'));
+//         abort(403, trans('admin.deny'));
+        return Admin::responseError(trans('admin.deny'),config('admin.response_code.failed'));
 
     }
 
